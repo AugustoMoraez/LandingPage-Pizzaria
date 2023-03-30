@@ -11,11 +11,11 @@ export const BannerBox = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     
     .logo{
         font-family: 'Fasthand';
-        font-size: 35px;
+        font-size: 40px;
     }
 
 
@@ -26,14 +26,15 @@ export const BannerBox = styled.div`
         background-position: center;
         background-size: cover;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: right;
+        align-items: flex-end;
 
         div{
             width: 100px;
             height: 100px;
             border-radius: 50%;
             border: 3px solid #eee;
+            margin-left: 20px;
             
             img{
                 width:95px;
@@ -44,6 +45,7 @@ export const BannerBox = styled.div`
 
     @media (max-width:820px) {
         justify-content: center;
+        padding: 10px;
         .banner{
             display: none;
         }

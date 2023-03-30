@@ -12,6 +12,14 @@ export const GlobalStyle = createGlobalStyle`
     body{
         background-color: #333;
     }
+    ul,li{
+        list-style: none;
+    }
+    button{
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
     
     /*
     font-family: 'Open Sans', sans-serif, 'Fasthand'; 
