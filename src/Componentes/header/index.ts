@@ -41,6 +41,10 @@ export const Menu = styled.div`
         
     }
     @media(max-width:500px){
+        button{
+            width: 70px;
+            font-size: 14px;
+        }
         flex-direction: column-reverse;
         .cart{
             margin-bottom: 10px;
