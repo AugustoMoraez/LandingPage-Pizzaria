@@ -29,13 +29,16 @@ export const Menu = styled.div`
         padding: 5px;
         border: 1px solid white;
         border-radius: 5px;
+        background-color: #CC0029;
         margin: auto 10px;
         font-size: 18px;
+        transition: all ease-in-out 0.5s;
     }
     button:hover{
         background-color: white;
         color: #E50034;
         cursor: pointer;
+        
     }
     @media(max-width:500px){
         flex-direction: column-reverse;
