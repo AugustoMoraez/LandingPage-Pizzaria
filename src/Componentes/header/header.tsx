@@ -1,21 +1,23 @@
 import { ContainerNav, Menu } from ".";
-import { Container } from "../../AppStyle";
+import { useNavigate } from "react-router-dom";
 import { BsFillCartFill } from "react-icons/bs";
 
 export const Header = () => {
+
+    const nav = useNavigate();
     return (
         <ContainerNav>
             <Menu>
                 <nav>
                     <ul>
                         <li>
-                            <button>Inicio</button>
+                            <button onClick={()=>nav("/")}>Inicio</button>
                         </li>
                         <li>
-                            <button>Delivery</button>
+                            <button onClick={()=>nav("/delivery")}>Delivery</button>
                         </li>
                         <li>
-                            <button>Reservas</button>
+                            <button onClick={()=>nav("/reserva")}>Reservas</button>
                         </li>
                     </ul>
                 </nav>

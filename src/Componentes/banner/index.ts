@@ -16,6 +16,7 @@ export const BannerBox = styled.div`
     .logo{
         font-family: 'Fasthand';
         font-size: 40px;
+        cursor: pointer;
     }
 
 
