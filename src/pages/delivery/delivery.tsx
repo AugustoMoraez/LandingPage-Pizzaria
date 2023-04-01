@@ -6,9 +6,12 @@ import { pizzas } from "../../data/pizzas";
 
 
 
+
 export const Delivery = () => {
     return(
+        
         <Container>
+            
             <GridContainer>
 
                 {pizzas.map((item)=>(
@@ -16,6 +19,8 @@ export const Delivery = () => {
                 ))}
 
             </GridContainer>
+            
         </Container>
+               
     )
 }

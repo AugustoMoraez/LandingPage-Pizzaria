@@ -13,7 +13,7 @@ export const ShopItem = ({ name, description, img, price }: pizza) => {
         <Card>
             <div className="action">
                 <Profile src={img ? img : pizzaImg} />
-                <button><BsPlus /></button>
+                <button><BsPlus color="#fff"/></button>
             </div>
 
 

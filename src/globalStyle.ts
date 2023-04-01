@@ -20,7 +20,9 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
         outline: none;
     }
-    
+    svg{
+        color: white;
+    }
     /*
     font-family: 'Open Sans', sans-serif, 'Fasthand'; 
     background color-1: #CC0029

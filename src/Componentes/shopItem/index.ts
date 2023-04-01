@@ -17,10 +17,9 @@ export const Card = styled.div`
     .action {
         padding: 10px;
         button svg{
-            width:60px;
-            height:60px
-
-            color: #fff;
+            color: white;
+            width: 30px;
+            height: 30px;
         }
         button{
             background-color:#E50034 ;

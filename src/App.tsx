@@ -6,14 +6,21 @@ import { Home } from "./pages/home/home";
 import { Delivery } from "./pages/delivery/delivery";
 import { Reserva } from "./pages/reserva/reserva";
 import {Cart} from "./pages/Cart/Cart";
-
+import { Modal } from "./Componentes/modal/modal";
 function App() {
   
 
-  return (
+  return ( 
+    <>
+    
+    <Modal/>
+    
+    
+    
     <Main>
       <Banner/>
       <Header/>
+      
 
       <Routes>
         <Route path="/" element={<Home/>}/> 
@@ -24,6 +31,9 @@ function App() {
       </Routes>
 
     </Main>
+    
+    </>
+    
   )
 }
 
