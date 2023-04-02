@@ -3,7 +3,7 @@ import pizzaImg from "../../assets/images/pizza.png";
 import { pizza } from "../../types/pizzaType";
 import { pizzas } from "../../data/pizzas";
 import { useContext } from "react";
-import { ContextToggles } from "../../hooks/contexts/contextToggles";
+import { Context } from "../../hooks/contexts/context";
 
 
 
@@ -12,7 +12,7 @@ import { ContextToggles } from "../../hooks/contexts/contextToggles";
 
 export const ShopItem = ({ name, description, img, price }: pizza) => {
     
-    const{dispatch} = useContext(ContextToggles);
+    const{dispatch} = useContext(Context);
     
    const HandleModal = () => {
         dispatch({

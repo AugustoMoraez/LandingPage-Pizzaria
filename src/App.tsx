@@ -8,12 +8,12 @@ import { Reserva } from "./pages/reserva/reserva";
 import {Cart} from "./pages/Cart/Cart";
 import { Modal } from "./Componentes/modal/modal";
 import { useContext } from "react";
-import { ContextToggles } from "./hooks/contexts/contextToggles";
+import { Context  } from "./hooks/contexts/context";
 
 
 
 function App() {
-  const{state} = useContext(ContextToggles)
+  const{state} = useContext(Context )
 
   return ( 
     <>

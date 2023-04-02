@@ -47,7 +47,11 @@ export const Menu = styled.div`
         }
         flex-direction: column-reverse;
         .cart{
+            margin: 0px;
             margin-bottom: 10px;
+        }
+        .cart svg{
+            margin: 0;
         }
     }
 `;
