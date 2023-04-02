@@ -16,12 +16,11 @@ export const Card = styled.div`
     }
     .action {
         padding: 10px;
-        button svg{
-            color: white;
-            width: 30px;
-            height: 30px;
-        }
+        
         button{
+            color:#fff;
+            font-size:30px;
+            font-weight:100;
             background-color:#E50034 ;
             width: 60px;
             height: 60px;

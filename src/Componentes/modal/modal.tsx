@@ -2,8 +2,15 @@ import {ModalContainer, ModalBox,ModalImage,ModalActions} from ".";
 import ft from "../../assets/images/pizza.png";
 import { useState } from "react";
 
+
 export const Modal = () => {
+  
+    
+    
+
+
     const[count,setCount] = useState(0);
+    
 
     const addQt = () => {
         if(count === 0){
@@ -22,7 +29,7 @@ export const Modal = () => {
 
 
     return(
-        <ModalContainer toggle={true}>
+        <ModalContainer toggle={false}>
             <ModalBox>
                 <ModalImage src={ft}/>
                 <ModalActions>

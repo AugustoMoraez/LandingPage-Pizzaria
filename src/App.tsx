@@ -7,15 +7,16 @@ import { Delivery } from "./pages/delivery/delivery";
 import { Reserva } from "./pages/reserva/reserva";
 import {Cart} from "./pages/Cart/Cart";
 import { Modal } from "./Componentes/modal/modal";
+
+
+
 function App() {
-  
+ 
 
   return ( 
     <>
     
     <Modal/>
-    
-    
     
     <Main>
       <Banner/>

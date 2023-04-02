@@ -4,11 +4,17 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from './globalStyle';
 
+
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <GlobalStyle/>
-      <App />
-    </BrowserRouter>
+   
+
+      <BrowserRouter>
+        <GlobalStyle />
+        <App />
+      </BrowserRouter>
+
+
   </React.StrictMode>,
 )

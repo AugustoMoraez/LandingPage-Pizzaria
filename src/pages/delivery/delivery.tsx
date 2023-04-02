@@ -7,15 +7,22 @@ import { pizzas } from "../../data/pizzas";
 
 
 
+
 export const Delivery = () => {
+   
+    
     return(
-        
         <Container>
             
             <GridContainer>
 
-                {pizzas.map((item)=>(
-                    <ShopItem img={item.img} description={item.description} name={item.name} price={item.price} />
+                {pizzas.map((item,index)=>(
+                    <ShopItem
+                    key={index} 
+                    img={item.img} 
+                    description={item.description} 
+                    name={item.name} price={item.price} 
+                    />
                 ))}
 
             </GridContainer>

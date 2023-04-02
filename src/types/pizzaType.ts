@@ -4,5 +4,6 @@ export type pizza = {
     img?:string,
     price?:number,
     sizes?:string[],
-    description?:string
+    description?:string,
+    
 }
