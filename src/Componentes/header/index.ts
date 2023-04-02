@@ -14,6 +14,18 @@ export const Menu = styled.div`
     margin: auto;
     padding: 10px;
     
+    .cart{
+        display: flex;
+        flex-direction:column ;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .value::before{
+        content: attr(data-count);
+        margin-right: 25px;
+    }
+
     .cart svg{
         margin-right: 25px;
         width: 25px;
@@ -53,5 +65,8 @@ export const Menu = styled.div`
         .cart svg{
             margin: 0;
         }
+        .value{
+        margin: 0;
+    }
     }
 `;
