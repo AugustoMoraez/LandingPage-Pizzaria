@@ -58,6 +58,11 @@ export const ModalImage = styled.div<ModalImageType>`
     @media(max-width:750px){
         margin: 30px auto;
     }
+    @media(max-width:375px){
+        max-width:150px;
+        height: 150px;
+        margin: 10px auto;
+    }
 `;
 
 export const ModalActions = styled.div`
