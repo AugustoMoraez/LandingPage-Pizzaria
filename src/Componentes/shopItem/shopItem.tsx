@@ -1,16 +1,35 @@
 import { Card, Profile } from ".";
 import pizzaImg from "../../assets/images/pizza.png";
 import { pizza } from "../../types/pizzaType";
+import { pizzas } from "../../data/pizzas";
+import { useContext } from "react";
+import { ContextToggles } from "../../hooks/contexts/contextToggles";
 
 
 
 
 
 
-export const ShopItem = ({ name, description, img, price }: pizza,) => {
+export const ShopItem = ({ name, description, img, price }: pizza) => {
     
+    const{dispatch} = useContext(ContextToggles);
     
-   
+   const HandleModal = () => {
+        dispatch({
+            type:"Open_Modal",
+            payload:{
+                toggle:true,
+                item:{
+                    id:0,
+                    name:name,
+                    img:img,
+                    price:price,
+                    sizes:["aa","ff"],
+                    description:description,
+                }
+            }
+        })
+   }
 
 
     return (
@@ -18,7 +37,7 @@ export const ShopItem = ({ name, description, img, price }: pizza,) => {
         <Card>
             <div className="action">
                 <Profile src={img ? img : pizzaImg} />
-                <button >+</button>
+                <button onClick={()=>HandleModal()} >+</button>
             </div>
 
 

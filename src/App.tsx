@@ -7,16 +7,18 @@ import { Delivery } from "./pages/delivery/delivery";
 import { Reserva } from "./pages/reserva/reserva";
 import {Cart} from "./pages/Cart/Cart";
 import { Modal } from "./Componentes/modal/modal";
+import { useContext } from "react";
+import { ContextToggles } from "./hooks/contexts/contextToggles";
 
 
 
 function App() {
- 
+  const{state} = useContext(ContextToggles)
 
   return ( 
     <>
     
-    <Modal/>
+    <Modal item={state.modal.item} toggle={state.modal.toggle}/>
     
     <Main>
       <Banner/>

@@ -1,11 +1,12 @@
 import {ModalContainer, ModalBox,ModalImage,ModalActions} from ".";
-import ft from "../../assets/images/pizza.png";
 import { useState } from "react";
+import {modalDataType} from "../../hooks/reducers/reducerModal"
+import { useContext } from "react";
+import { ContextToggles } from "../../hooks/contexts/contextToggles";
 
-
-export const Modal = () => {
+export const Modal = ({toggle,item}:modalDataType) => {
   
-    
+    const{dispatch} = useContext(ContextToggles)
     
 
 
@@ -27,22 +28,25 @@ export const Modal = () => {
         }
     }
 
+    const CloseModal = () => {
+        dispatch({
+            type:"Close_Modal",
+            payload:{
+                toggle:false,
+                
+            }
+        })
+    }
 
     return(
-        <ModalContainer toggle={false}>
+        <ModalContainer toggle={toggle}>
             <ModalBox>
-                <ModalImage src={ft}/>
+                <ModalImage src={item.img ? item.img : ""}/>
                 <ModalActions>
                     <div className="info">
-                        <h3>Mussarela</h3>
-                        <p>uma pizza muito boa Lorem
-                             ipsum dolor sit amet 
-                            consectetur adipi
-                             ipsum dolor sit amet 
-                            consectetur adipi
-                             ipsum dolor sit amet 
-                            consectetur adipi
-                        </p>
+                        <h3>{item.name}</h3>
+                        <p>{item.description}</p>
+
                     </div>
                     <div className="sizes">
                         <span>Tamanhos</span>
@@ -55,7 +59,7 @@ export const Modal = () => {
                     <div className="qtd">
                         <span>Preço</span>
                         <div className="countBox">
-                            <p>R$12,00</p>
+                            <p>{`R$${item.price && (item.price * count).toFixed(2)}`}</p>
                             <div className="count">
                                 <button onClick={removeQt}>-</button>
                                 <div className="qt">{count}</div>
@@ -65,7 +69,7 @@ export const Modal = () => {
                     </div>
                     <div className="actions">
                         <button>Adicionar</button>
-                        <button>Cancelar</button>
+                        <button onClick={CloseModal}>Cancelar</button>
                     </div>
                 </ModalActions>
             </ModalBox>

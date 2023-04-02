@@ -18,10 +18,12 @@ export const Delivery = () => {
 
                 {pizzas.map((item,index)=>(
                     <ShopItem
+                                      
                     key={index} 
                     img={item.img} 
                     description={item.description} 
                     name={item.name} price={item.price} 
+                    
                     />
                 ))}
 
