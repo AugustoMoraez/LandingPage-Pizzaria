@@ -109,9 +109,19 @@ export const ModalActions = styled.div`
                 }
                
             }
+            button:focus{
+                background: #E50034;
+                color: #fff;
+            }
+            
             button:hover{
                 background-color:#d4d4d4; 
                 cursor: pointer;
+
+                @media(max-width:750px){
+                    background-color:#E50034; 
+                    color: #fff;
+                }
             }
             button:first-child{
                 border-top-left-radius: 10px ;
@@ -121,6 +131,7 @@ export const ModalActions = styled.div`
                 border-top-right-radius: 10px ;
                 border-bottom-right-radius: 10px;
             }
+          
         }
     }
     .qtd{

@@ -14,10 +14,15 @@ export const SlideViwer = styled.div`
         left: 30px;
         top: 50%;
         transform: translate(-50%,0%);
+        
     }
     .left svg{
         width: 50px;
         height: 50px;
+        @media(max-width:500px){
+            width: 30px;
+            height: 30px;
+        }
     }
     .right{
         cursor: pointer;
@@ -30,6 +35,10 @@ export const SlideViwer = styled.div`
     .right svg{
         width: 50px;
         height: 50px;
+        @media(max-width:500px){
+            width: 30px;
+            height: 30px;
+        }
     }
 `;
 
