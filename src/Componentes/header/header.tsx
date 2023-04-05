@@ -4,19 +4,28 @@ import { BsFillCartFill } from "react-icons/bs";
 import { Context } from "../../hooks/contexts/context";
 import {useContext } from "react";
 import { itemCartType } from "../../types/itemCart";
+import { ItemCart } from "../itemCart/itemCart";
+import { cartDB } from "../../data/cartDB";
 
 
 export const Header = () => {
-
+    
 
     const{state} = useContext(Context);
 
-    const totalValue = (item:itemCartType[]) => {
+    const totalValue = (item:itemCartType[] | null) => {
         let total = 0
-        item.map((item)=>{
-            return total = parseInt(item.itemValue) + total
-        })
+        {
+            item !== null
+            ?
+            item.map((item)=>{
+                return total = parseInt(item.itemValue) + total
+            })
+            :
+            total = 0
+        }
         return total
+        
     }
 
     const nav = useNavigate();
@@ -38,7 +47,7 @@ export const Header = () => {
                 </nav>
                 <div className="cart" onClick={()=>nav("/carrinho")}>
                     <BsFillCartFill  />
-                    <div className="value" data-count={`R$${totalValue(state.cart)},00`}></div>
+                    <div className="value" data-count={`R$${totalValue(cartDB("cart"))},00`}></div>
                 </div>
             </Menu>
         </ContainerNav>

@@ -9,11 +9,17 @@ import {Cart} from "./pages/Cart/Cart";
 import { Modal } from "./Componentes/modal/modal";
 import { useContext } from "react";
 import { Context  } from "./hooks/contexts/context";
+import { cartDB } from "./data/cartDB";
+
 
 
 
 function App() {
   const{state} = useContext(Context )
+
+
+  
+
 
   return ( 
     <>
@@ -28,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/> 
         <Route path="/delivery" element={<Delivery/>}/> 
-        <Route path="/carrinho" element={<Cart data={state.cart}/>}/> 
+        <Route path="/carrinho" element={<Cart data={cartDB("cart")}/>}/> 
         <Route path="/reserva" element={<Reserva/>}/> 
 
       </Routes>

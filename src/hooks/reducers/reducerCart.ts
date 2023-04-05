@@ -1,17 +1,23 @@
+import { cartDB } from "../../data/cartDB";
 import { itemCartType } from "../../types/itemCart";
 import { reducerActionType } from "../../types/reducerActionType";
 
 
 
-export const initialCartState: itemCartType[] = []
+export const initialCartState: itemCartType[] = cartDB("cart");
 
 
 export const reducerCart = (state: itemCartType[], action: reducerActionType) => {
+
     switch (action.type) {
         case "Add_Cart":
             if(action.payload.itemCart){
                 const newState = [...state];
+                
+                
+
                 newState.push(action.payload.itemCart);
+                localStorage.setItem("cart",JSON.stringify(newState));
                 return  newState 
             }
             

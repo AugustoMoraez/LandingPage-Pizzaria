@@ -3,7 +3,7 @@ import { CartContainer, CartBox,  } from ".";
 import { ItemCart } from "../../Componentes/itemCart/itemCart";
 
 type cartType = {
-    data: itemCartType[]
+    data: itemCartType[] | []
 }
 
 export const Cart = ({ data }: cartType) => {
@@ -13,14 +13,19 @@ export const Cart = ({ data }: cartType) => {
             <CartBox>
                 <h2>Carrinho</h2>
 
-                <div className="itens-display">
+                {
+                    data === null 
+                    ?
+                    <div> carrinho vazio</div>
+                    :
+                    <div className="itens-display">
+                        {data.map((item,index)=>(
+                            <ItemCart item={item} key={index}  />
+                        ))}
+                    </div>
+                }
+
                 
-                    {data.map((item,index)=>(
-                        <ItemCart item={item} key={index}  />
-                    ))}
-
-
-                </div>
                 <div className="actions">
                     <button>Comprar</button>
                     <button>Cancelar</button>
