@@ -22,9 +22,8 @@ export const CartBox = styled.div`
     color: #333;
     background-color:#fff ;
     width:100%;
-    max-width:600px;
+    max-width:900px;
     height: 450px;
-    box-shadow:1px 2px 10px #333;
     border-radius: 10px ;
     display: flex;
     justify-content:space-between;
@@ -33,7 +32,7 @@ export const CartBox = styled.div`
     @media(max-width:500px){
         border: none;
         border-radius:0;
-        box-shadow:none;
+    
         height: calc(100vh - 200px);
         justify-content:space-evenly;
 
@@ -48,13 +47,24 @@ export const CartBox = styled.div`
         font-weight:200;
         text-align:center;
     }
-
+   
     .itens-display{
         width:100%;
-        max-width:600px;
+        max-width:900px;
         height: 300px;
         overflow-x:hidden;
+           
+    }
+    .itens-display::-webkit-scrollbar {
+        width: 12px;             
+    }
 
+    .itens-display::-webkit-scrollbar-track{
+        background-color:none ;
+    }
+    .itens-display::-webkit-scrollbar-thumb{
+        background-color:#E50034 ;
+        border-radius:10px;
     }
 
 
