@@ -5,6 +5,7 @@ import { Context } from "../../hooks/contexts/context";
 import {useContext } from "react";
 import { itemCartType } from "../../types/itemCart";
 
+
 export const Header = () => {
 
 
@@ -28,15 +29,15 @@ export const Header = () => {
                             <button onClick={()=>nav("/")}>Inicio</button>
                         </li>
                         <li>
-                            <button onClick={()=>nav("/delivery")}>Delivery</button>
+                            <button onClick={()=>nav("/delivery")}>Pizzas</button>
                         </li>
                         <li>
-                            <button onClick={()=>nav("/reserva")}>Reservas</button>
+                            <button onClick={()=>nav("/reserva")}>Reserva</button>
                         </li>
                     </ul>
                 </nav>
-                <div className="cart">
-                    <BsFillCartFill />
+                <div className="cart" onClick={()=>nav("/carrinho")}>
+                    <BsFillCartFill  />
                     <div className="value" data-count={`R$${totalValue(state.cart)},00`}></div>
                 </div>
             </Menu>

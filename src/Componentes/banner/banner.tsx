@@ -14,7 +14,7 @@ export const Banner = () => {
 
     return(
         <ContainerBanner>
-            <Container>
+            <Container color="#fff">
                 <BannerBox>
                 <div className="logo" onClick={()=>nav("/")}>PizzariaKing</div>
                 <div className="banner">

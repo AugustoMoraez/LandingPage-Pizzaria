@@ -12,7 +12,7 @@ export const Delivery = () => {
    
     
     return(
-        <Container>
+        <Container color="#fff">
             
             <GridContainer>
 

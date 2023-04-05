@@ -67,6 +67,9 @@ export const Menu = styled.div`
         }
         .value{
         margin: 0;
-    }
+        }
+        .value::before{
+        margin: 0;
+        }
     }
 `;

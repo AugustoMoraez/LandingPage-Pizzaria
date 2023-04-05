@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/> 
         <Route path="/delivery" element={<Delivery/>}/> 
-        <Route path="/carrinho" element={<Cart/>}/> 
+        <Route path="/carrinho" element={<Cart data={state.cart}/>}/> 
         <Route path="/reserva" element={<Reserva/>}/> 
 
       </Routes>

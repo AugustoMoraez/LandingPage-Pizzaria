@@ -6,7 +6,12 @@ export const Main = styled.div`
     
 `;
 
-export const Container = styled.div`
+type contType = {
+    color:"#fff" | "#333"
+}
+
+export const Container = styled.div<contType>`
+    color: ${(prop)=> prop.color};
     width: 100%;
     max-width: 1340px;
     margin: auto;
