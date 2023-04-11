@@ -13,16 +13,18 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
         case "Add_Cart":
             if(action.payload.itemCart){
                 const newState = [...state];
-                
-                
-
                 newState.push(action.payload.itemCart);
                 localStorage.setItem("cart",JSON.stringify(newState));
                 return  newState 
             }
-            
-        
         break;
+        case "Remove_Cart":
+            let newState = [...state]
+            state = newState.filter((item)=> item.key !== action.payload.itemCart.key)
+            localStorage.setItem("cart",JSON.stringify(state));
+            return state
+            
+        break
     }
 
 

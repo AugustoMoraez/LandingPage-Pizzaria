@@ -4,5 +4,6 @@ export type itemCartType = {
     item:pizza,
     size:number,
     qt:number,
-    itemValue: string
+    itemValue: string,
+    key:string
 }

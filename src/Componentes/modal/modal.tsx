@@ -1,10 +1,10 @@
 import { ModalContainer, ModalBox, ModalImage, ModalActions } from ".";
-import React, { ChangeEvent, useState } from "react";
+import  { useState } from "react";
 import { modalDataType } from "../../hooks/reducers/reducerModal"
 import { useContext } from "react";
 import { Context } from "../../hooks/contexts/context";
 import { pizza } from "../../types/pizzaType";
-
+import {v4 as uuidv4} from "uuid";
 
 export const Modal = ({ toggle, item }: modalDataType) => {
 
@@ -46,7 +46,8 @@ export const Modal = ({ toggle, item }: modalDataType) => {
                     item: item,
                     size: size,
                     qt: qt,
-                    itemValue: item.price ? ((item.price + size) * qt).toFixed(2) : 0
+                    itemValue: item.price ? ((item.price + size) * qt).toFixed(2) : 0,
+                    key:uuidv4()
                 }
             }
         })

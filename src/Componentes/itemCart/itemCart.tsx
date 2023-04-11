@@ -1,13 +1,17 @@
 import { itemCartType } from "../../types/itemCart";
 import { Item } from ".";
 import { FaTrash } from "react-icons/fa";
-
+import { useContext } from "react";
+import { Context } from "../../hooks/contexts/context";
 
 type cart = {
     item: itemCartType
 }
 
 export const ItemCart = ({ item }: cart) => {
+
+    const{dispatch} = useContext(Context);
+
 
     const handleSize = (size: number) => {
 
@@ -28,7 +32,14 @@ export const ItemCart = ({ item }: cart) => {
         }
 
     }
-
+    const handleRemoveItemCart = (itemCart:itemCartType) => {
+        dispatch({
+            type:"Remove_Cart",
+            payload:{
+                itemCart:itemCart
+            }
+        })
+    }
 
     return (
         <Item>
@@ -39,7 +50,7 @@ export const ItemCart = ({ item }: cart) => {
                     
                 </div>
                 <div className="buttons">
-                    <div className="Remove"><FaTrash/></div>
+                    <div className="Remove" onClick={()=> handleRemoveItemCart(item)}><FaTrash/></div>
                     <div className="counters">
                         <div className="menos">-</div>
                         <div className="value">0</div>

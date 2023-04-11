@@ -1,9 +1,9 @@
 import { Card, Profile } from ".";
 import pizzaImg from "../../assets/images/pizza.png";
 import { pizza } from "../../types/pizzaType";
-import { pizzas } from "../../data/pizzas";
 import { useContext } from "react";
 import { Context } from "../../hooks/contexts/context";
+
 
 
 
@@ -20,7 +20,6 @@ export const ShopItem = ({ name, description, img, price }: pizza) => {
             payload:{
                 toggle:true,
                 item:{
-                    id:0,
                     name:name,
                     img:img,
                     price:price,
