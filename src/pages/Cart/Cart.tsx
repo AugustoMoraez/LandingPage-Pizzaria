@@ -1,22 +1,29 @@
 import { itemCartType } from "../../types/itemCart";
-import { CartContainer, CartBox,  } from ".";
+import { CartContainer, CartBox, VoidCart } from ".";
 import { ItemCart } from "../../Componentes/itemCart/itemCart";
 
+
 type cartType = {
-    data: itemCartType[] | []
+    data: itemCartType[];
 }
 
 export const Cart = ({ data }: cartType) => {
+
+
+    
+
     return (
         <CartContainer>
             
             <CartBox>
                 <h2>Carrinho</h2>
-
+                
                 {
-                    data === null 
+                    data?.length === 0
                     ?
-                    <div> carrinho vazio</div>
+                    <VoidCart>
+                        <h4>Carrinho Vazio :(</h4>
+                    </VoidCart>
                     :
                     <div className="itens-display">
                         {data.map((item,index)=>(

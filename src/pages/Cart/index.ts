@@ -94,3 +94,13 @@ export const CartBox = styled.div`
       
 
 `;
+export const VoidCart = styled.div`
+    
+    h4{
+        color: black;
+        opacity:0.2;
+        font-size:40px ;
+        text-align:center;
+    }
+   
+`;
