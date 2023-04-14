@@ -12,7 +12,10 @@ export const BoxFlex = styled.div`
 export const BoxInfo = styled.div`
     width:40%;
     height:450px;
-    border:1px solid #E0BD0F;
-    margin: 100px auto;
+    color:gray;
+    font-size:30px;
+    text-align:center;
+    font-weight:bold;
+    opacity:0.4;
 
 `;

@@ -14,7 +14,10 @@ export const SlideViwer = styled.div`
         left: 30px;
         top: 50%;
         transform: translate(-50%,0%);
-        
+        @media(max-width:500px){
+           
+            top: 30px;
+        }
     }
     .left svg{
         width: 50px;
@@ -22,6 +25,7 @@ export const SlideViwer = styled.div`
         @media(max-width:500px){
             width: 30px;
             height: 30px;
+            
         }
     }
     .right{
@@ -31,6 +35,10 @@ export const SlideViwer = styled.div`
         right: 5px;
         top: 50%;
         transform: translate(-50%,0%);
+        @media(max-width:500px){
+            
+            top: 30px;
+        }
     }
     .right svg{
         width: 50px;
@@ -38,6 +46,7 @@ export const SlideViwer = styled.div`
         @media(max-width:500px){
             width: 30px;
             height: 30px;
+            top: 30px;
         }
     }
 `;
@@ -157,8 +166,8 @@ export const SlideData = styled.div`
    @media(max-width:300px){
     .infos{
         h1{
-            font-size: 32px;
-            margin: 10px;
+            font-size: 50px;
+            margin: 5px;
         }
         span{
            font-size: 10px;

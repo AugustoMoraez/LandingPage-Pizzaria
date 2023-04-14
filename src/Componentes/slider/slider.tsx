@@ -7,12 +7,15 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 import { FaRegHandPointLeft } from "react-icons/fa";
 import { BsChevronCompactLeft } from "react-icons/bs";
 import { BsChevronCompactRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 
 
 export const Slider = () => {
 
     const [count, setCount] = useState(0);
+    const nav = useNavigate()
+
 
     const handleSlidePLus = () => {
         let numb = 100
@@ -60,7 +63,7 @@ export const Slider = () => {
                                     </div>
                                 </button>
                                 <button>
-                                    <div className="icons">
+                                    <div className="icons" onClick={()=>nav("/delivery")}>
                                         Veja opções   <BsArrowRightCircleFill />
                                     </div>
                                 </button>
@@ -83,8 +86,8 @@ export const Slider = () => {
                                     </div>
                                 </button>
                                 <button>
-                                    <div className="icons">
-                                        Cardapio   <BsArrowRightCircleFill />
+                                    <div className="icons" onClick={()=>nav("/delivery")}>
+                                        Cardapio    <BsArrowRightCircleFill />
                                     </div>
                                 </button>
                             </div>
@@ -102,12 +105,12 @@ export const Slider = () => {
                             </p>
                             <div>
                                 <button>
-                                    <div className="icons">
+                                    <div className="icons" onClick={()=>nav("/reserva")}>
                                         Orçamentos  <FaRegHandPointLeft />
                                     </div>
                                 </button>
                                 <button>
-                                    <div className="icons">
+                                    <div className="icons" onClick={()=>nav("/reserva")}>
                                         Veja opções   <BsArrowRightCircleFill />
                                     </div>
                                 </button>

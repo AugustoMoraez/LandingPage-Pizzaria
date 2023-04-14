@@ -5,7 +5,7 @@ export const Reserva = () => {
     return(
         <Container color="#333">
             <BoxFlex>
-                <BoxInfo>a</BoxInfo>
+                <BoxInfo>Em breve</BoxInfo>
             </BoxFlex>
         </Container>
     )
