@@ -23,8 +23,12 @@ export const Item = styled.div`
             span{
                 color: #333;
                 text-align:center;
-                font-weight:bold;
+                font-weight:light;
                 font-size:20px
+                
+            }
+            .name{
+                color: #CC0029;
                 
             }
         }
@@ -112,13 +116,12 @@ export const Item = styled.div`
                 background-color:rgba(0,0,0,0.4);
                 color: #333;
                 width: 100%;
-                width: 30px;
             }
             .value{
                 cursor: default;
                 padding: 1px 5px;
                 background-color:rgba(0,0,0,0.3);
-                
+                width: 30px;
                 color: white;
             }
             .menos{

@@ -26,7 +26,7 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
                     
                     if (item.size === itemToAdd[0]?.size) {
                     
-                        const newQt = (item.qt + itemToAdd[0].qt) >= 10 ? (item.qt + itemToAdd[0].qt) :  1 ;
+                        const newQt = (item.qt + itemToAdd[0].qt) ;
                         const newValue = `${(parseInt(item.itemValue) + parseInt(itemToAdd[0].itemValue))}`;
                         const NewItem = {
                             item:item.item,

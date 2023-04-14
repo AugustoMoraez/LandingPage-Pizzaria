@@ -50,7 +50,8 @@ export const ItemCart = ({ item }: cart) => {
                 <img src={item.item.img} alt={item.item.name}  />
                 <div className="info">
                     <span>Qt: {item.qt}</span>
-                    <span>{` ${item.item.name} - ${handleSize(item.size)}`}</span>
+                    <span className="name"> {` ${item.item.name} - ${handleSize(item.size)}`}</span>
+                    <span>Valor:{`R$${item.itemValue},00`}</span>
                 </div>
                 <div className="buttons">
                     <div className="Remove" onClick={()=> handleRemoveItemCart(item)}><FaTrash/></div>
