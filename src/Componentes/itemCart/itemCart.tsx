@@ -1,7 +1,7 @@
 import { itemCartType } from "../../types/itemCart";
 import { Item } from ".";
 import { FaTrash } from "react-icons/fa";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import { Context } from "../../hooks/contexts/context";
 
 type cart = {
@@ -9,6 +9,9 @@ type cart = {
 }
 
 export const ItemCart = ({ item }: cart) => {
+
+    const[qt,setQt] = useState<number>(item.qt)
+    
 
     const{dispatch} = useContext(Context);
 
@@ -44,16 +47,16 @@ export const ItemCart = ({ item }: cart) => {
     return (
         <Item>
             <div className="content">
-                <img src={item.item.img} alt={item.item.name} />
+                <img src={item.item.img} alt={item.item.name}  />
                 <div className="info">
+                    <span>Qt: {item.qt}</span>
                     <span>{` ${item.item.name} - ${handleSize(item.size)}`}</span>
-                    
                 </div>
                 <div className="buttons">
                     <div className="Remove" onClick={()=> handleRemoveItemCart(item)}><FaTrash/></div>
                     <div className="counters">
                         <div className="menos">-</div>
-                        <div className="value">0</div>
+                        <div className="value">{qt}</div>
                         <div className="mais">+</div>
                     </div>
                 </div>

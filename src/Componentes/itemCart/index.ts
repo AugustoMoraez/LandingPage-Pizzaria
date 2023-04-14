@@ -112,12 +112,13 @@ export const Item = styled.div`
                 background-color:rgba(0,0,0,0.4);
                 color: #333;
                 width: 100%;
+                width: 30px;
             }
             .value{
                 cursor: default;
                 padding: 1px 5px;
                 background-color:rgba(0,0,0,0.3);
-                width: 20px;
+                
                 color: white;
             }
             .menos{

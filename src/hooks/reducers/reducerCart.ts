@@ -1,4 +1,3 @@
-import { Item } from "../../Componentes/itemCart";
 import { cartDB } from "../../data/cartDB";
 import { itemCartType } from "../../types/itemCart";
 import { reducerActionType } from "../../types/reducerActionType";
@@ -27,8 +26,8 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
                     
                     if (item.size === itemToAdd[0]?.size) {
                     
-                        const newQt = (item.qt + itemToAdd[0].qt);
-                        const newValue = `${(parseInt(item.itemValue) + parseInt(itemToAdd[0].itemValue))}`
+                        const newQt = (item.qt + itemToAdd[0].qt) >= 10 ? (item.qt + itemToAdd[0].qt) :  1 ;
+                        const newValue = `${(parseInt(item.itemValue) + parseInt(itemToAdd[0].itemValue))}`;
                         const NewItem = {
                             item:item.item,
                             size:item.size,
