@@ -49,7 +49,7 @@ export const SliderShow = styled.div<SliderShowType>`
     display: flex;
     width: 300vw;
     height: inherit;
-    transition: all ease-in-out 1.5s;
+    transition: all ease-in-out 1s;
     margin-left: ${(prop)=>`-${prop.MoveTo}vw`};
     
 `;

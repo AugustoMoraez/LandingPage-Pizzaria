@@ -31,11 +31,7 @@ export const Slider = () => {
         }
     }
 
-    useEffect(() => {
-        setTimeout(() => {
-            handleSlidePLus()
-        }, 10000)
-    }, [count])
+    
 
     return (
         <SlideViwer>
