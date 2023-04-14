@@ -20,22 +20,22 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
             } else {
                 const filter = newState.filter((item) => item.size == action.payload.itemCart.size);
                 const item: itemCartType = action.payload.itemCart
-                const itemToAdd = filter.filter((item)=> item.item.name === action.payload.itemCart.item.name )
+                const itemToAdd = filter.filter((item) => item.item.name === action.payload.itemCart.item.name)
 
                 if (item.item.name === itemToAdd[0]?.item.name) {
-                    
+
                     if (item.size === itemToAdd[0]?.size) {
-                    
-                        const newQt = (item.qt + itemToAdd[0].qt) ;
+
+                        const newQt = (item.qt + itemToAdd[0].qt);
                         const newValue = `${(parseInt(item.itemValue) + parseInt(itemToAdd[0].itemValue))}`;
                         const NewItem = {
-                            item:item.item,
-                            size:item.size,
-                            qt:newQt,
-                            itemValue:newValue,
-                            key:itemToAdd[0].key
+                            item: item.item,
+                            size: item.size,
+                            qt: newQt,
+                            itemValue: newValue,
+                            key: itemToAdd[0].key
                         }
-                        const newArray = newState.filter((item)=> item.key !== itemToAdd[0].key);
+                        const newArray = newState.filter((item) => item.key !== itemToAdd[0].key);
                         newArray.push(NewItem);
                         state = newArray;
                         localStorage.setItem("cart", JSON.stringify(state));
@@ -55,12 +55,10 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
                 }
 
             }
-            break;
-
-
 
 
         case "Remove_Cart":
+
             if (state.length === 1) {
                 let newState = [...state]
                 state = newState.filter((item) => item.key !== action.payload.itemCart.key)
@@ -76,6 +74,23 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
 
 
             break
+        case "Add_Qt":
+            if(action){
+                let filter = state.filter((item)=>item.key !== action.payload.itemCart.key);
+                filter.push(action.payload.itemCart);
+                state = filter;
+                localStorage.setItem("cart", JSON.stringify(state));
+                return state;
+            }
+        
+
+        break
+        case "Remove_Qt":
+            if(action){
+                console.log(action.payload.itemCart.qt)
+            }
+
+        break
     }
 
 
