@@ -19,20 +19,41 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
                 localStorage.setItem("cart", JSON.stringify(state));
                 return state;
             } else {
-                const filter = newState.filter((item) => item.item.name == action.payload.itemCart.item.name);
-                const itemToAdd = filter.length == 0 ? null : filter[0];
+                const filter = newState.filter((item) => item.size == action.payload.itemCart.size);
                 const item: itemCartType = action.payload.itemCart
+                const itemToAdd = filter.filter((item)=> item.item.name === action.payload.itemCart.item.name )
 
-                if (item.item.name === itemToAdd?.item.name) {
+                if (item.item.name === itemToAdd[0]?.item.name) {
                     
+                    if (item.size === itemToAdd[0]?.size) {
+                    
+                        const newQt = (item.qt + itemToAdd[0].qt);
+                        const newValue = `${(parseInt(item.itemValue) + parseInt(itemToAdd[0].itemValue))}`
+                        const NewItem = {
+                            item:item.item,
+                            size:item.size,
+                            qt:newQt,
+                            itemValue:newValue,
+                            key:itemToAdd[0].key
+                        }
+                        const newArray = newState.filter((item)=> item.key !== itemToAdd[0].key);
+                        newArray.push(NewItem);
+                        state = newArray;
+                        localStorage.setItem("cart", JSON.stringify(state));
+                        return state;
+
+                    } else {
+                        newState.push(item);
+                        state = newState;
+                        localStorage.setItem("cart", JSON.stringify(state));
+                        return state;
+                    }
                 } else {
                     newState.push(item);
                     state = newState;
                     localStorage.setItem("cart", JSON.stringify(state));
                     return state;
                 }
-
-
 
             }
             break;
