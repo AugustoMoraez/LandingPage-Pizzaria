@@ -46,7 +46,7 @@ export const Modal = ({ toggle, item }: modalDataType) => {
                     item: item,
                     size: size,
                     qt: qt,
-                    itemValue: item.price ? (item.price + size)*qt : 0 ,
+                    itemValue: item.price ? ((item.price + size)*qt).toFixed(0) : 0 ,
                     key:uuidv4()
                 }
             }
