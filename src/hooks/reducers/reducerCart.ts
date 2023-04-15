@@ -14,7 +14,7 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
             let newState = [...state];
             if (action.payload.itemCart && state.length == 0) {
                 newState.push(action.payload.itemCart);
-                state = newState;
+                state = newState.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
                 localStorage.setItem("cart", JSON.stringify(state));
                 return state;
             } else {
@@ -37,19 +37,19 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
                         }
                         const newArray = newState.filter((item) => item.key !== itemToAdd[0].key);
                         newArray.push(NewItem);
-                        state = newArray;
+                        state = newArray.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
                         localStorage.setItem("cart", JSON.stringify(state));
                         return state;
 
                     } else {
                         newState.push(item);
-                        state = newState;
+                        state = newState.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
                         localStorage.setItem("cart", JSON.stringify(state));
                         return state;
                     }
                 } else {
                     newState.push(item);
-                    state = newState;
+                    state = newState.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
                     localStorage.setItem("cart", JSON.stringify(state));
                     return state;
                 }
@@ -68,7 +68,8 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
             } else {
                 let newState = [...state]
                 state = newState.filter((item) => item.key !== action.payload.itemCart.key)
-                localStorage.setItem("cart", JSON.stringify(state));
+                const newArray = state.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
+                localStorage.setItem("cart", JSON.stringify(newArray));
                 return state
             }
 
@@ -78,7 +79,7 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
             if(action){
                 let filter = state.filter((item)=>item.key !== action.payload.itemCart.key);
                 filter.push(action.payload.itemCart);
-                state = filter;
+                state = filter.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
                 localStorage.setItem("cart", JSON.stringify(state));
                 return state;
             }
@@ -87,7 +88,8 @@ export const reducerCart = (state: itemCartType[], action: reducerActionType) =>
         break
         case "Remove_Qt":
             if(action){
-                console.log(action.payload.itemCart.qt)
+                const newState = [...state]
+                state = newState.sort((a,b)=> (a.item.price > b.item.price) ? 1 : -1);
             }
 
         break

@@ -41,7 +41,7 @@ export const Header = () => {
                             <button onClick={()=>nav("/delivery")}>Pizzas</button>
                         </li>
                         <li>
-                            <button onClick={()=>nav("/reserva")}>Reserva</button>
+                            <button onClick={()=>nav("/carrinho")}>Carrinho</button>
                         </li>
                     </ul>
                 </nav>

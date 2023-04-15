@@ -1,7 +1,7 @@
 export type pizza = {
     name?:string,
     img?:string,
-    price?:number,
+    price:number,
     sizes?:string[],
     description?:string,
     id?:number

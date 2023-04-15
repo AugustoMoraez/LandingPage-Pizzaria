@@ -52,6 +52,10 @@ export const Modal = ({ toggle, item }: modalDataType) => {
             }
         })
         CloseModal()
+        window.scrollTo({
+            top:0,
+            
+        })
     }
 
     return (

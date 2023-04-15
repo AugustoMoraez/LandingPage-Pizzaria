@@ -1,6 +1,8 @@
 import { itemCartType } from "../../types/itemCart";
 import { CartContainer, CartBox, VoidCart } from ".";
 import { ItemCart } from "../../Componentes/itemCart/itemCart";
+import { useContext } from "react";
+import { Context } from "../../hooks/contexts/context";
 
 
 type cartType = {
@@ -9,8 +11,7 @@ type cartType = {
 
 export const Cart = ({ data }: cartType) => {
 
-
-    
+    const{state}=useContext(Context)
 
     return (
         <CartContainer>
@@ -32,11 +33,18 @@ export const Cart = ({ data }: cartType) => {
                     </div>
                 }
 
+                {
+                data?.length === 0 
+                ?
+                <div></div>
+                :
                 
                 <div className="actions">
-                    <button>Comprar</button>
-                    <button>Cancelar</button>
+                    <button
+                    onClick={()=>alert(`voce comprou pizzas de ${data.map((item)=> item.item.name +" no tamanho de " +" valor de " + " R$"+item.itemValue+",00 ")}`)}>Comprar</button>
                 </div>
+                
+                }
             </CartBox>
 
         </CartContainer>
